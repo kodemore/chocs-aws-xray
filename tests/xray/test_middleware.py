@@ -1,3 +1,4 @@
+from aws_xray_sdk.core import xray_recorder
 from chocs_middleware.xray import AwsXRayMiddleware
 from chocs import HttpRequest, HttpResponse, Application, HttpMethod, HttpStatus
 from unittest import mock
@@ -24,7 +25,9 @@ def test_is_handler_providing_its_name() -> None:
     with mock.patch("chocs_middleware.xray.middleware.check_in_lambda") as check_in_lambda:
         check_in_lambda.return_value = True
 
-        response = app(HttpRequest(HttpMethod.GET, "/test"))
+        # Start a parent segment. Normally this would be done for us in AWS however here we need to do it ourselves.
+        with xray_recorder.in_segment("## lambda container"):
+            response = app(HttpRequest(HttpMethod.GET, "/test"))
 
     # then
     assert response.status_code == HttpStatus.OK

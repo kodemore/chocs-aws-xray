@@ -3,7 +3,8 @@ name = "chocs_middleware.xray"
 version = "1.0.0"
 description = "Middleware to integrate aws x-ray with chocs."
 authors = [
-    "Dawid Kraczkowski <dawid.kraczkowski@gmail.com>"
+    "Dawid Kraczkowski <dawid.kraczkowski@gmail.com>",
+    "Aidan Currah <aidancurrah@gmail.com>"
 ]
 license = "MIT"
 readme = "README.md"

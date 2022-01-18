@@ -4,11 +4,11 @@ AWS X-Ray middleware for chocs library.
 ## Installation 
 through poetry:
 ```shell
-poetry add chocs_middleware.xray
+poetry add chocs-middleware.xray
 ```
 or through pip:
 ```shell
-pip install chocs_middleware.xray
+pip install chocs-middleware.xray
 ```
 
 ## Usage

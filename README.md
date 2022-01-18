@@ -57,7 +57,7 @@ def say_hello(request):
 
 > To learn more about error_handler interface please click [here.]("./chocs_middleware/xray/middleware.py:16") 
 
-### Accessing x-ray recorded from within your application layer
+### Accessing x-ray recorder from within your application layer
 ```python
 from chocs import Application, HttpResponse
 from chocs_middleware.xray import AwsXRayMiddleware
